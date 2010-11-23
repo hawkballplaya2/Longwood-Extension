@@ -1,0 +1,20 @@
+{
+  "name": "Longwood Extension",
+  "version": "2.1",
+  "description": "Searches Longwood Universities Greenwood library.  Designed for Longwood University students.",
+  "incognito": "split",
+  "browser_action": {
+    "default_icon": "rotundaIcon.png",
+	"default_title": "Longwood Library",
+	"default_popup": "popup.html"
+  },
+"icons": { "16": "rotunda16.png",
+           "48": "rotunda48.png",
+          "128": "library128.png" 
+		 },
+  "permissions": [
+	"tabs",
+	"notifications",
+	"http://readpac.longwood.edu/*"
+  ]
+}

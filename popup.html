@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Search the Longwood Library</title>
+  
+  <script type="text/javascript">
+  
+    function catalog(Item) {
+		chrome.tabs.create({url:"http://readpac.longwood.edu/search/X?"+Item.value});
+	}
+	  
+	function faculty(Member) {
+		chrome.tabs.create({url:"http://centaur.longwood.edu/search?q="+Member.value});
+	}
+	
+	function journal(Article) {
+		chrome.tabs.create({url:"http://py8en6ee7p.search.serialssolutions.com/?V=1.0&N=100&L=PY8EN6EE7P&S=AC_T_B&C="+Article.value});
+	}
+	
+	function make_blank() {
+			document.LibraryForm.Item.value="";
+			document.FacultyForm.Member.value="Search Longwood";
+			document.JournalForm.Article.value="Search Journals";
+	}
+	
+	function make_blank2() {
+			document.FacultyForm.Member.value="";
+			document.LibraryForm.Item.value="Search Library";
+			document.JournalForm.Article.value="Search Journals";
+	}
+
+	function make_blank3() {
+			document.JournalForm.Article.value="";
+			document.LibraryForm.Item.value="Search Library";
+			document.FacultyForm.Member.value="Search Longwood";
+	}	
+	  
+  </script>
+  
+  <div>Search Greenwood Library</div>
+  
+  <form method="get" name="LibraryForm" onsubmit="catalog(Item);">
+  <input type="text" name="Item" size="25" maxlength="50" value="Search Library" onclick="make_blank()"; />
+  <input type="submit" value="Search" /><br><br>
+  </form>
+  
+  <form method="get" name="FacultyForm" onsubmit="faculty(Member);">
+  <input type="text" name="Member" size="25" maxlength="50" value="Search Longwood" onclick="make_blank2()";/>
+  <input type="submit" value="Search" />
+  </form>
+  <br />
+  
+  <form method="get" name="JournalForm" onsubmit="journal(Article)";>
+  <input type="text" name="Article" size="25" maxlength="50" value="Search Journals" onclick="make_blank3()";/>
+  <input type="submit" value="Search" />
+  </form>
+  <br />
+
+  <iframe src="https://www.google.com/calendar/embed?showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=ovjemtohsq1s9i72c3ou2i5bdc%40group.calendar.google.com&amp;color=%23060D5E&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23691426&amp;ctz=America%2FNew_York" style=" border-width:0 " width="400" height="300" frameborder="0" scrolling="no"></iframe>
+
+  <center><img src="./Logo_Longwood.png" alt="Longwood University Logo" align="center" /></center>
+  
+	</head>
+  </form>
+ </body>
+</html>
